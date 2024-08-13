@@ -18,11 +18,12 @@ remainingAmount = remainingAmount % 5
 
 pennies = remainingAmount #just for pretty
 
-print('You have', amount, 'dollars. \nThis means you have'
-      , dollars, 'dollars,', 
-      quarters, 'quarters,', 
-      dimes, 'dimes,', 
-      nickels, 'nickels and', 
-      pennies, 'pennies.')
+print('You have ', amount, 'dollars. \nThis means you have '
+      , dollars, ' dollars, ', 
+      quarters, ' quarters, ', 
+      dimes, ' dimes,', 
+      nickels, ' nickels and ', 
+      pennies, ' pennies.')
 
+print(f"You have {amount} dollars")
 
