@@ -25,5 +25,6 @@ print('You have ', amount, 'dollars. \nThis means you have '
       nickels, ' nickels and ', 
       pennies, ' pennies.')
 
-print(f"You have {amount} dollars")
+print(f"You have {amount} 
+      dollars")
 
