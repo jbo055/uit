@@ -17,28 +17,20 @@ includedTextMessages = 50
 additionalMinutes = totalMinutes - includedMinutes
 additionalTextMessages = totalTextMessages - includedTextMessages
 
-if additionalMinutes < 0:
-    additionalMinutes = 0
+additionalMinutes = max(0, additionalMinutes)
 additionalMinutesCost = additionalMinutes * additionalMinutesCharge
-if additionalTextMessages < 0:
-    additionalTextMessages = 0
+additionalTextMessages = max(0, additionalTextMessages)
 additionalTextCost = additionalTextMessages * additionalTextCharge
-if calls911 < 0:
-    calls911 = 0
+calls911 = max(0, calls911)
 total911Charge = calls911 * additional911Charge
 
 taxAmount = (baseCharge + additionalMinutesCost + additionalTextCost + total911Charge) * tax
 totalBill = baseCharge + additionalMinutesCost + additionalTextCost + total911Charge + taxAmount
 
-print(format('Base charge: $', baseCharge,))
+print('Base charge: $', baseCharge,)
 print('Additional minutes charge: $', additionalMinutesCost)
 print('Additional text message charge: $', additionalTextCost)  
 print('911 charge: $', total911Charge)  
 print('Tax: $', taxAmount)
 print('Total bill: $', totalBill)
-
-
-
-
-
 

@@ -14,11 +14,18 @@ while len(num) != 9:
     if len(num) == 9:
         break
 
-d1, d2, d3, d4, d5, d6, d7, d8, d9 = num
-# print(d1, d2, d3, d4, d5, d6, d7, d8, d9)
-checksum = (int(d1) * 1 + int(d2) * 2 + int(d3) * 3 + int(d4) * 4 + int(d5) * 5 + int(d6) * 6 + int(d7) * 7 + int(d8) * 8 + int(d9) * 9) % 11
-# print(checksum)
-if checksum == 10:
-    print(f"The ISBN-10 number is {num}X")
-else:
-    print(f"The ISBN-10 number is {num}{checksum}")
+# Function to check the ISBN number
+def checkISBN(num):
+    d1, d2, d3, d4, d5, d6, d7, d8, d9 = num
+    checksum = (int(d1) * 1 + int(d2) * 2 + int(d3) * 3 + int(d4) * 4 + int(d5) * 5 + int(d6) * 6 + int(d7) * 7 + int(d8) * 8 + int(d9) * 9) % 11
+    return checksum
+
+# Check if the checksum is 10
+def getISBN10(num):
+   if checkISBN(num) == 10:
+     return f"{num}X"
+   else:
+     return f"{num}{checkISBN(num)}"
+   
+# Display the ISBN-10 number
+print(f"The ISBN-10 number is: {getISBN10(num)}")
