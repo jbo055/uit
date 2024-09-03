@@ -12,7 +12,7 @@ paper = 2
 
 # Generate a random number between 0 and 2
 computer = random.randint(0, 2)
-# print(computer)
+
 human = int(input('Enter 0 for scissor, 1 for rock, or 2 for paper: '))
 
 if computer == human:

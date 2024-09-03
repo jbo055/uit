@@ -63,6 +63,7 @@ number1, number2 = recieveNumbers(0, 0)
 sum = multiplyNumbers(number1, number2) #vi lagrer resultatet i en variabel
 print(f'The product of the two numbers is {sum}') #her printer vi resultatet som vi har lagret
 
+#alt som skjer i en funksjon skjer kun i funksjonen, med mindre vi returnerer noe.
 
 
 
