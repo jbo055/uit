@@ -1,5 +1,7 @@
 #learning how to create lists in python
 #making a function that adds customers to a list
+import random
+
 def main():
     def add_customers(customers_list):
             print("Adding customers.")
@@ -29,7 +31,7 @@ def main():
         else:
             print("Customer", customer_to_search, "not found.")
         return customers_list
-    def print_customers(customers_list):
+    def print_customers():
         number_of_customers = len(customers)
         print("Printing", number_of_customers, "customers. ")
         for number, _customer in enumerate(customers):
@@ -43,12 +45,25 @@ def main():
         else:
             print("Customer", customer_to_edit, "not found.")
 
-    customers = [] # this is an empty list
+
+    def generate_random_customers(customers_list):
+        nr_of_random_customers = int(input("How many random customers do you want to pick? "))
+        random_customers = random.choices(customers_list, k = nr_of_random_customers)
+        print("Random customer(s) selected. ")
+        return random_customers
+    
+    def print_random_customers(random_customers):
+        print(f'The winners are: {random_customers}')
+
+
+
+    customers = [] 
+    random_customer = []
 
     # we want to make a system where we can add, delete and edit customers to a list
     choice = 0 # we put this to make the while loop work. 
-    while choice != 7: # while the choice is not 3, the loop will continue. 
-        choice = int(input("1. Add customer. \n2. Delete customer. \n3. Search list. \n4. Sort list. \n5. Print list. \n6. Edit customer. \n7. Exit. \nChoose an option: "))
+    while choice != 9: # while the choice is not 3, the loop will continue. 
+        choice = int(input("1. Add customer. \n2. Delete customer. \n3. Search list. \n4. Sort list. \n5. Print list. \n6. Edit customer. \n7. Pick random customers. \n8. Print winner(s). \n9. Exit. \nChoose an option: "))
         # 1 for adding customers 2 for deleting list 3 for searching in list 4 for sorting list 5 for printing all items 6 for edit
 
         if choice == 1:
@@ -61,10 +76,14 @@ def main():
         elif choice == 4:
             customers = sort_customers(customers)
         elif choice == 5:
-            print_customers(customers)
+            print_customers()
         elif choice == 6:
             edit_customer(customers)
         elif choice == 7:
+            random_customers = generate_random_customers(customers)
+        elif choice == 8:
+            print_random_customers(random_customers)
+        elif choice == 9:
             print("Exiting. ")
         else: 
             print("Invalid input")
