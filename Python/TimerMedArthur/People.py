@@ -383,11 +383,7 @@ def main():
         y = 250,
         width = 251,
         height = 50
-        )
-
-    
-
-    
+        )        
 
 if __name__ == "__main__":
     main()

@@ -69,8 +69,7 @@ def main_menu():
         listbox = tk.Listbox(
             main_frame, 
             width = 41, 
-            height = 14
-            )
+            height = 15)
         listbox.place(
             x = 10, 
             y = 70)
@@ -88,7 +87,8 @@ def main_menu():
             width = 251,
             height = 50
         )
-        
+
+
 
     def add_list():
         for widget in main_frame.winfo_children():
@@ -126,20 +126,6 @@ def main_menu():
         add_button.place(
             x = 10,
             y = 100,
-            width = 251,
-            height = 50
-        )
-        return_button = tk.Button(
-            main_frame,
-            text = "Tilbake",
-            font = ("Helvetica", 12),
-            bg = "#F6A9A2",
-            relief = tk.RAISED,
-            command = main_menu
-        )
-        return_button.place(
-            x = 10,
-            y = 310,
             width = 251,
             height = 50
         )
