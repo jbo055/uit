@@ -1,12 +1,5 @@
 import requests
 
-def getRequestData(year, gender, name):
-    year = input("Enter the year: ")
-    gender = input("Enter the gender: ")
-    name = input("Enter the name: ")
-    return year, gender, name
-
-
 def getData():
     year = input("Enter the year: ")
     gender = input("Enter the gender: ")
@@ -30,10 +23,8 @@ def getData():
                 print(f"{name} is ranked {rank} in year {year} with {boyCount} births.")
                 return
         elif gender.lower() == "female":
-            
+            if girlName.lower() == name.lower():
+                print(f"{name} is ranked {rank} in year {year} with {girlCount} births.")
+                return
             
         
-def main():
-    getData()
-
-main()
