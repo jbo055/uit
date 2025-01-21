@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 13.12 ( The TriangleError class) Define an exception class named TriangleError 
 # that extends RuntimeError. The TriangleError class contains the private data 
 # fields side1, side2, and side3 with accessor methods for the three sides of a 
