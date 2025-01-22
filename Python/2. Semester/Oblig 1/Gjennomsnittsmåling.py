@@ -10,13 +10,20 @@ import pickle
 
 def file_to_dict(filename):
     with open(filename, "r") as file:
-        
+        data = file.readlines()
+        return {line.split()[0]: datetime.datetime.strptime(" ".join(line.split()[1:]), "%Y-%m-%d %H:%M:%S") for line in data}
+    print(data)
+
+filenameA = "box_a.txt"
+filenameB = "box_b.txt"
+
+print(file_to_dict(filenameA))
+print(file_to_dict(filenameB))
 
 
-
-class SpeedTicket:
-    def __init__(self, time_stamp, speed, speed_limit):
-        self.time_stamp = time_stamp
-        self.speed = speed
-        self.speed_limit = speed_limit
+# class SpeedTicket:
+#     def __init__(self, time_stamp, speed, speed_limit):
+#         self.time_stamp = time_stamp
+#         self.speed = speed
+#         self.speed_limit = speed_limit
 
