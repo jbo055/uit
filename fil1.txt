@@ -1,0 +1,2 @@
+Dette er en testfil. Den inneholder noen ord, og noen ord gjentas.
+Python er gøy!

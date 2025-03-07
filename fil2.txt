@@ -1,0 +1,2 @@
+Her er en annen testfil. Noen ord er like, noen er unike.
+Python programmering er interessant!

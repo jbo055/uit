@@ -1,29 +1,36 @@
-import datetime
-import os
-import pickle
-
-# Skriv hjelpefunksjonen file_to_dict() som har en parameter filename. Denne funksjonen skal 
-# lese inn en tekstfil filename fra en fotoboks, som inneholder bilnummer, dato og tid for 
-# hver passering. Funksjonen skal returnere en dictionary med bilnummer som nøkkel og tidspunkt 
-# som verdi for nøkkelen.
-# Eksempel på kjøring av funksjon på fila box_a.txt som vist i figuren: (viser kun 3 første poster)
+from datetime import datetime
+from Vehicle import Vehicle, Car, Truck, SUV
 
 def file_to_dict(filename):
-    with open(filename, "r") as file:
-        data = file.readlines()
-        return {line.split()[0]: datetime.datetime.strptime(" ".join(line.split()[1:]), "%Y-%m-%d %H:%M:%S") for line in data}
-    print(data)
+    vehicle_data = {}
+    try:
+        with open(filename, "r") as file:
+            for line in file:
+                parts = line.strip().split()
+                regnr = parts[0]
+                timestamp = " ".join(parts[1:]) # samler dato og tid til en streng
+                vehicle_data[regnr] = datetime.strptime(timestamp, "%Y-%d-%m %H:%M:%S")
+    except FileNotFoundError:
+        print("File not found.")
+    return vehicle_data
 
-filenameA = "box_a.txt"
-filenameB = "box_b.txt"
+class SpeedTicket:
+    def __init__(self, timestamp, speed, speed_limit):
+        self.timestamp = timestamp
+        self.speed = speed
+        self.speed_limit = speed_limit
 
-print(file_to_dict(filenameA))
-print(file_to_dict(filenameB))
+    def __str__(self):
+        return f"Timestamp: {self.timestamp}, Speed: {self.speed}, Speed Limit: {self.speed_limit}"
+    
+def find_speeders(dict_a, dict_b, speed_limit, distance):
+    for regnr in dict_a:
+        if regnr in dict_b:
+            time_a = dict_a[regnr]
+            time_b = dict_b[regnr]
+            time_diff = (time_b - time_a).total_seconds() / 3600 # tiden i timer
+            speed = distance / time_diff # hastigheten i km/t
 
-
-# class SpeedTicket:
-#     def __init__(self, time_stamp, speed, speed_limit):
-#         self.time_stamp = time_stamp
-#         self.speed = speed
-#         self.speed_limit = speed_limit
-
+            if speed > speed_limit * 1.05:
+                ticket = SpeedTicket(time_b, speed, speed_limit)
+                vehicles_dict[regnr].add_speed_ticket(ticket)
