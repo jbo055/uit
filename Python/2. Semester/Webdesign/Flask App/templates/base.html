@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Oblig 4 - Basic Flask Application</h1>
+        <div class = "dropdown">
+            <img src="{{ url_for('static', filename = 'images/menu.png') }}" alt="Menu" class="menubtn">
+            <div class="dropdown-content">
+                <a href="{{ url_for('index') }}">Hovedside</a>
+                <a href="{{ url_for('about') }}">Om Flask</a>
+                <a href="{{ url_for('me') }}">Om Meg</a>
+            </div>
+        </div>
+    </header>
+
+
+    <footer>
+        <p>&copy; 2025 Julie Børli</p>
+    </footer>
+</html>

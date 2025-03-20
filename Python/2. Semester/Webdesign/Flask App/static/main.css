@@ -1,0 +1,68 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url('images/flask_app_header.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 225px;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    padding-top: 80px;
+    padding-left: 20px;
+    font-size: 3em;
+    color: white;
+    text-align: left;
+}
+
+.dropdown {
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    display: inline-block;
+}
+
+.menubtn {
+    height: 85px;
+    width: 85px;
+}
+
+.dropbtn {
+    cursor: pointer;
+    width: 30px;
+    height: auto;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #112637;
+    width: 240px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color on hover for dropdown links */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu when hovering over the dropdown container */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
