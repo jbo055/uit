@@ -192,7 +192,7 @@ class LinkedList:
                 return index
             index += 1
             current = current.next
-            index += 1
+
         return -1
 
     # Return the index of the last matching element in this list
