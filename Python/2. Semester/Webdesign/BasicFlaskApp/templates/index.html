@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Basic Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    
+    <header>
+        <h1>Basic Flask App</h1>
+        <nav class = "navbar" id = "navbar">
+
+            <button id = "nav-toggle" type = "button">
+                <img src="{{ url_for('static', filename = 'images/menu.png') }}" alt="Menu" class = "menu-btn">
+            </button>
+
+            <div class = "menu" id = "nav-menu">
+                <a href="{{ url_for('index') }}">Hovedside</a>
+                <a href="{{ url_for('flask') }}">Om Flask</a>
+                <a href="{{ url_for('me') }}">Om Meg</a>
+            </div>   
+        </nav> 
+    </header>
+
+
+
+
+
+    <footer>
+        <p>&copy; 2021 Julie Børli</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('nav-toggle').addEventListener('click', function() {
+                document.getElementById('nav-menu').classList.toggle('active');
+                document.getElementById('navbar').classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
