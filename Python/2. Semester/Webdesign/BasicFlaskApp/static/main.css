@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'flask_app_title_font';
+    src: url('fonts/Super Peace.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #9BA9A6;
+}
+
+header {
+    background-image: url('images/flask_app_header.png');
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 100%;
+    position: relative;
+}
+
+h1 {
+    font-family: 'flask_app_title_font';
+    font-size: 4em;
+    color: #9BA9A6;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    margin: 0;
+    padding-top: 50px;
+    padding-left: 40px;
+}
+
+.navbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navbar button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.menu-btn {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+}
+
+.menu {
+    display: none;
+    margin-left: 20px;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu.active {
+    display: flex;
+}
+
+.navbar.active {
+    justify-content: flex-start;
+    background-color: #9BA9A6;
+}
+.menu a {
+    text-decoration: none; 
+    font-family: 'flask_app_title_font';
+    font-size: 1.5em;
+    color: #0D2A34;
+    text-shadow: 2px 2px 4px rgba(179, 81, 95, 0.5);
+}

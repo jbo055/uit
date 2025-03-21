@@ -13,13 +13,23 @@ header {
     position: relative;
 }
 
+@font-face {
+    font-family: 'CustomTitleFont';
+    src: url('fonts/Super Peace.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 header h1 {
+    letter-spacing: 2px;
     margin: 0;
     padding-top: 80px;
     padding-left: 20px;
+    font-family: 'CustomTitleFont';
     font-size: 3em;
-    color: white;
+    color: #9BA9A6;
     text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .dropdown {
@@ -32,6 +42,7 @@ header h1 {
 .menubtn {
     height: 85px;
     width: 85px;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
 }
 
 .dropbtn {
@@ -42,27 +53,49 @@ header h1 {
 
 .dropdown-content {
     display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transition: transform 0.3s ease;
+    transform: translateY(-10px);
     position: absolute;
-    background-color: #112637;
-    width: 240px;
+    top: 100%;
+    right: -20%;
+    background-color: #F67C70;
+    width: 340px;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    border-radius: 8px;
+    padding: 8px 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
     display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-family: 'CustomTitleFont';
+    font-size: 40px;
+    color: black;
+    text-align: right;
+    background: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menubtn a:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Change color on hover for dropdown links */
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: #ffa79f;
+
 }
 
 /* Show the dropdown menu when hovering over the dropdown container */
 .dropdown:hover .dropdown-content {
     display: block;
+    opacity: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
 }
