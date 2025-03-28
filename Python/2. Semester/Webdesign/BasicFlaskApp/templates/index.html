@@ -16,16 +16,15 @@
             </button>
 
             <div class = "menu" id = "nav-menu">
-                <a href="{{ url_for('index') }}">Hovedside</a>
-                <a href="{{ url_for('flask') }}">Om Flask</a>
-                <a href="{{ url_for('me') }}">Om Meg</a>
+                <a href="{{ url_for('index') }}" 
+                class="{% if active_page == 'index' %}active{% endif %}">Hovedside</a>
+                <a href="{{ url_for('flask') }}"
+                class="{% if active_page == 'flask' %}active{% endif %}">Om Flask</a>
+                <a href="{{ url_for('me') }}"
+                class="{% if active_page == 'me' %}active{% endif %}">Om Meg</a>
             </div>   
         </nav> 
     </header>
-
-
-
-
 
     <footer>
         <p>&copy; 2021 Julie Børli</p>
@@ -34,7 +33,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('nav-toggle').addEventListener('click', function() {
-                document.getElementById('nav-menu').classList.toggle('active');
                 document.getElementById('navbar').classList.toggle('active');
             });
         });

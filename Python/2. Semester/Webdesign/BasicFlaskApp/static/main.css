@@ -38,6 +38,7 @@ h1 {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .navbar button {
@@ -59,18 +60,24 @@ h1 {
     gap: 20px;
 }
 
-.menu.active {
+.navbar.active .menu {
     display: flex;
 }
 
 .navbar.active {
     justify-content: flex-start;
-    background-color: #9BA9A6;
+    background-color: #0a2027;
 }
+
 .menu a {
     text-decoration: none; 
     font-family: 'flask_app_title_font';
     font-size: 1.5em;
-    color: #0D2A34;
-    text-shadow: 2px 2px 4px rgba(179, 81, 95, 0.5);
+    color: #9BA9A6;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+.menu a.active {
+    border-bottom: 2px solid #000000;
+}
+
