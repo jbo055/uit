@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}About Me{% endblock %}
+{% block content %}
+<article class="me-article">
+    <img src="{{ url_for('static', filename='images/julie.jpg') }}" alt="Julie" class="me-image">
+    <h2>Julie Anette Gjelseth Borli</h2>
+    <p>My name is Julie Anette, but people just call me Julie.
+        I was born on december 23rd 1997.</p>
+    <p>Before i started University I did a lot of different jobs. I worked 
+        for a hobby store called "Panduro Hobby", before I left to work at
+        "Rema 1000". I worked there for a few years, before I started 
+        working at "Narvesen". When covid hit I was temporarily laid off, 
+        so I went to work for "Diplom-Is" for the summer, driving the icecream truck.</p>
+    <p>A few years later I decided to retry University, after an ADHD diagnosis
+        that I hope will give me the tools to finish my degree. I am currently
+        in my first year, and I think it is going great!</p>
+    <hr>
+    <img src="{{ url_for('static', filename='images/mammaogpappa.jpg') }}" alt="Parents" class="parents-image">
+    <h3>My parents</h3>
+    <p>These weirdos are my parents, Marianne and Frode. Both of them have 
+        education within computer science. </p>
+    <p>My mom used to work with HTML and 
+        CSS. My dad is a programmer. He currently works for his company 
+        "CompanyCasts" where he streams events for politicians and churches. 
+        He is also studying to get his masters degree, and he is doing a 
+        project with the hospital.</p>
+    <hr>
+    <img src="{{ url_for('static', filename='images/julieogvilja.jpg') }}" alt="Julie and Vilja" class="vilja-image">
+    <h3>My sister</h3>
+    <p>This is my sister Vilja. She is 10 years younger than me, and she is 
+        the best sister in the world. She is currently in high school, and 
+        doing great!</p>
+    <p>She is very creative, and she loves to draw and paint. She is a younger
+        gamer and I believe one day she will combine her love for art and gaming,
+        and become a game designer. We will see!</p>
+    <hr>
+</article>
+<article class="previous-knowledge-article">
+    <h2>My previous knowledge</h2>
+    <p>I have no experience from HTML or CSS from before this. I have been blessed 
+        however, and I have parents that know a lot about the subject. Even for this 
+        project I have gotten to ask my mom for help, and she has been a great help.</p>
+    <p>I have some knowledge from using JavaScript the first time I tried to study 
+        Computer Science, which has been very helpful. I have used Python before,
+        but I have never used Flask or any other web-frameworks.</p>
+    <h3>What do I think?</h3>
+    <p>I think this is a great way to learn how to make websites. I have always 
+        liked design, and I can already see myself enjoying webdesign a lot. In 
+        high school I did architecture and design, and I believe that what I 
+        learned there, can be helpful in this topic.</p>
+</Article>
+{% endblock %}

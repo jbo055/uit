@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Min App {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <header>
+        <h1>My first Flask App</h1>
+        <button class= "hamburger" id = "nav-toggle" type = "button">
+            <svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="white">
+                <rect y="20" width="100" height="10" rx="5"/>
+                <rect y="45" width="100" height="10" rx="5"/>
+                <rect y="70" width="100" height="10" rx="5"/>
+            </svg>
+        </button>
+        <hr class = "line" id = "navbar-line">s
+        <nav class = "navbar" id = "navbar">
+
+            <div class = "menu" id = "nav-menu">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('aboutflask') }}">Flask</a>
+                <a href="{{ url_for('aboutme') }}">Meg</a>
+            </div>
+        </nav>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('nav-toggle').addEventListener('click', function() {
+                    document.getElementById('navbar').classList.toggle('active');
+                    document.getElementById('nav-menu').classList.toggle('active');
+                    document.getElementById('navbar-line').classList.toggle('active');
+                    document.getElementById('header').classList.toggle('nav-active');
+                });
+            });
+        </script>    
+    </header>
+    <main>
+        <div class="content-box">
+            {% block content %}
+            <!-- Default content can go here -->
+            {% endblock %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2021 Julie Børli</p>
+    </footer>
+</body>
+</html>

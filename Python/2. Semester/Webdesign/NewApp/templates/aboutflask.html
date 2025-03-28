@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}About Flask{% endblock %}
+{% block content %}
+    <article class="flask-article">
+        <img src="{{ url_for('static', filename='images/flask.png') }}" alt="Flask logo" class="flask-logo-right">
+        <h2>Flask</h2>
+        
+        <p>Flask is a micro web framework written in Python. It is classified 
+            as a microframework because it does not require particular tools or 
+            libraries. It has no database abstraction layer, form validation, 
+            or any other components where pre-existing third-party libraries 
+            provide common functions. However, Flask supports extensions that 
+            can add application features as if they were implemented in Flask 
+            itself. Extensions exist for object-relational mappers, form 
+            validation, upload handling, various open authentication technologies 
+            and several common framework related tools.</p>
+        <hr>
+        <h3>What is a microframework?</h3>
+        <p>A microframework is a term used to refer to minimalistic web application 
+            frameworks. It is contrasted with full-stack frameworks. Microframeworks 
+            are often contrasted with full-stack frameworks. Full-stack frameworks 
+            are larger frameworks that include many tools and libraries by default. 
+            Microframeworks, on the other hand, are minimalistic and usually consist 
+            of only a few libraries. This makes them easier to learn and use, but 
+            also less powerful and flexible.</p>
+        <hr>
+        <h3>Why use Flask?</h3>
+        <p>Flask is a great choice for small to medium-sized projects. It is easy 
+            to learn and use, and it is very flexible. Flask is also very lightweight, 
+            which makes it a great choice for projects where performance is important. 
+            Flask is also very extensible, which means that you can easily add new 
+            features to your application by using third-party extensions.</p>        
+    </article>
+{% endblock %}
