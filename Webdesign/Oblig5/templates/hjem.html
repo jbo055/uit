@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Hjem - EventHub{% endblock %}
+{% block content %}
+  <h1>Kommende arrangementer</h1>
+  {% if arrangementer %}
+    <div class="list-group">
+      {% for arr in arrangementer %}
+        <a href="{{ url_for('arrangement_detail', arrangement_id=arr.id) }}" class="list-group-item list-group-item-action">
+          <h5 class="mb-1">{{ arr.navn }}</h5>
+          <p class="mb-1">{{ arr.beskrivelse|truncate(100) }}</p>
+          <small>{{ arr.dato.strftime('%d.%m.%Y %H:%M') }} - {{ arr.sted }}</small>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>Ingen arrangementer funnet.</p>
+  {% endif %}
+{% endblock %}
