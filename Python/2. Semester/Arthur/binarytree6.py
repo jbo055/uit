@@ -50,7 +50,7 @@ class BinaryTree:
 if __name__ == "__main__":
     binarytree = BinaryTree()
 
-    testlist = [1, 3, 11, 55, 66, 4, 7]
+    testlist = [7, 1, 0, 5, 4, 8, 3, 2, 9]
 
     for i in testlist:
         binarytree.insert(i)
